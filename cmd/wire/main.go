@@ -121,7 +121,7 @@ func (cmd *genCmd) SetFlags(f *flag.FlagSet) {
 	f.StringVar(&cmd.headerFile, "header_file", "", "path to file to insert as a header in wire_gen.go")
 	f.StringVar(&cmd.prefixFileName, "output_file_prefix", "", "string to prepend to output file names.")
 	f.StringVar(&cmd.suffixFileName, "output_file_suffix", "", "string to append to output file names.")
-	f.BoolVar(&cmd.excludeGenerateLine, "no_generate_line", true, "do not include automatic go:generate line in output.")
+	f.BoolVar(&cmd.excludeGenerateLine, "no_generate_line", false, "do not include automatic go:generate line in output.")
 	f.StringVar(&cmd.tags, "tags", "", "append build tags to the default wirebuild")
 }
 
