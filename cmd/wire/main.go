@@ -32,7 +32,7 @@ import (
 	"strings"
 
 	"github.com/google/subcommands"
-	"github.com/google/wire/internal/wire"
+	"github.com/pantsmann/wire/internal/wire"
 	"github.com/pmezard/go-difflib/difflib"
 	"golang.org/x/tools/go/types/typeutil"
 )
@@ -98,9 +98,11 @@ func newGenerateOptions(headerFile string) (*wire.GenerateOptions, error) {
 }
 
 type genCmd struct {
-	headerFile     string
-	prefixFileName string
-	tags           string
+	headerFile          string
+	prefixFileName      string
+	suffixFileName      string
+	excludeGenerateLine bool
+	tags                string
 }
 
 func (*genCmd) Name() string { return "gen" }
@@ -118,6 +120,8 @@ func (*genCmd) Usage() string {
 func (cmd *genCmd) SetFlags(f *flag.FlagSet) {
 	f.StringVar(&cmd.headerFile, "header_file", "", "path to file to insert as a header in wire_gen.go")
 	f.StringVar(&cmd.prefixFileName, "output_file_prefix", "", "string to prepend to output file names.")
+	f.StringVar(&cmd.suffixFileName, "output_file_suffix", "", "string to append to output file names.")
+	f.BoolVar(&cmd.excludeGenerateLine, "no_generate_line", true, "do not include automatic go:generate line in output.")
 	f.StringVar(&cmd.tags, "tags", "", "append build tags to the default wirebuild")
 }
 
@@ -134,6 +138,8 @@ func (cmd *genCmd) Execute(ctx context.Context, f *flag.FlagSet, args ...interfa
 	}
 
 	opts.PrefixOutputFile = cmd.prefixFileName
+	opts.SuffixOutputFile = cmd.suffixFileName
+	opts.NoGenerateLine = cmd.excludeGenerateLine
 	opts.Tags = cmd.tags
 
 	outs, errs := wire.Generate(ctx, wd, os.Environ(), packages(f), opts)
