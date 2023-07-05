@@ -491,7 +491,7 @@ func loadTestCase(root string, wireGoSrc []byte) (*testCase, error) {
 		}
 	}
 	goFiles := map[string][]byte{
-		"github.com/pantsmann/wire/wire.go": wireGoSrc,
+		"github.com/github.com/noke-inc/lib_wiremann/wire/wire.go": wireGoSrc,
 	}
 	err = filepath.Walk(root, func(src string, info os.FileInfo, err error) error {
 		if err != nil {
@@ -543,9 +543,9 @@ func (test *testCase) materialize(gopath string) error {
 		}
 	}
 
-	// Add go.mod files to example.com and github.com/pantsmann/wire.
+	// Add go.mod files to example.com and github.com/github.com/noke-inc/lib_wiremann/wire.
 	const importPath = "example.com"
-	const depPath = "github.com/pantsmann/wire"
+	const depPath = "github.com/noke-inc/lib_wire"
 	depLoc := filepath.Join(gopath, "src", filepath.FromSlash(depPath))
 	example := fmt.Sprintf("module %s\n\nrequire %s v0.1.0\nreplace %s => %s\n", importPath, depPath, depPath, depLoc)
 	gomod := filepath.Join(gopath, "src", filepath.FromSlash(importPath), "go.mod")

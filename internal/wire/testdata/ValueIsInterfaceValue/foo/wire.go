@@ -21,7 +21,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 func injectedReader(r *strings.Reader) io.Reader {

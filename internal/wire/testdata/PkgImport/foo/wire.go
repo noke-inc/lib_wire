@@ -21,7 +21,7 @@ import (
 	_ "example.com/anon1" // intentionally duplicated
 	_ "example.com/anon1" // intentionally duplicated
 	_ "example.com/anon2"
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 func injectFooBar() FooBar {

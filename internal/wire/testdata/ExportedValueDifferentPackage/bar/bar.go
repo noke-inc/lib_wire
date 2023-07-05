@@ -17,7 +17,7 @@ package bar
 import (
 	"os"
 
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"ib_wire"
 )
 
 var Value = wire.Value(os.Stdout)

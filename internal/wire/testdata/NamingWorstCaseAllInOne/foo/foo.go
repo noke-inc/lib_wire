@@ -26,7 +26,7 @@ import (
 	"os"
 	"reflect"
 
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 type context struct{}

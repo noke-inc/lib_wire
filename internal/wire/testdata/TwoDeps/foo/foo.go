@@ -17,7 +17,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 func main() {

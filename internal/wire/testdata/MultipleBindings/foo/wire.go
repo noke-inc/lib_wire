@@ -20,7 +20,7 @@ package main
 import (
 	"strings"
 
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 func inject() Foo {

@@ -21,7 +21,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 func inject() io.Writer {

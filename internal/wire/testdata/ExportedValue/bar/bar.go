@@ -14,7 +14,7 @@
 
 package bar
 
-import "github.com/pantsmann/wire"
+import wire "github.com/noke-inc/lib_wire"
 
 var Value = wire.Value(PublicMsg)
 

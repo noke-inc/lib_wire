@@ -1,4 +1,4 @@
-module github.com/pantsmann/wire
+module github.com/noke-inc/lib_wire
 
 go 1.12
 

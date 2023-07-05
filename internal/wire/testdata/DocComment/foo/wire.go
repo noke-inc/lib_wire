@@ -18,7 +18,7 @@
 package main
 
 import (
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 /* blockComment returns Foo and has a /*- style doc comment */

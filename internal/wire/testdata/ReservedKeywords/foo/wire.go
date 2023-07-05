@@ -18,7 +18,7 @@
 package main
 
 import (
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 // Wire tries to disambiguate the variable "select" by prepending

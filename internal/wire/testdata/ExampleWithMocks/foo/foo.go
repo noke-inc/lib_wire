@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 func main() {

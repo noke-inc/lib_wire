@@ -20,7 +20,7 @@ package main
 import (
 	stdcontext "context"
 
-	"github.com/pantsmann/wire"
+	wire "github.com/noke-inc/lib_wire"
 )
 
 // The notable characteristic of this test is that there are no

@@ -1,5 +1,5 @@
 github.com/google/subcommands
-github.com/pantsmann/wire
+github.com/noke-inc/lib_wire
 github.com/pmezard/go-difflib
 golang.org/x/mod
 golang.org/x/sys
